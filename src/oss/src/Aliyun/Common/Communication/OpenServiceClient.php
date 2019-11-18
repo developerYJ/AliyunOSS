@@ -37,7 +37,6 @@ class OpenServiceClient implements ServiceClientInterface  {
         $response =  $this->client->sendRequest($request, $context);
         
         foreach ($context->getResponseHandlers() as $handler) {
-var_dump($request);
             $handler->handle($response);
         }
         
